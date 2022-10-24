@@ -1,5 +1,5 @@
 ---
-title: Welcome to Kevin's blog
+title: Kevin Joe
 ---
 
 <!-- comments -->
