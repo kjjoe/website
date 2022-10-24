@@ -69,8 +69,8 @@ Small changes in the ratio of dry and wet ingredients do affect the end product!
 6. Repeat until all macarons shells are used. This recipe should make between full 25-30 macarons.
 
 Final Product:
-![Macaron_single](../Attachments/macaron0.jpg)
-![Macaron_many](../Attachments/macaron1.jpg)
+![Macaron_single](/Attachments/macaron0.jpg)
+![Macaron_many](/Attachments/macaron1.jpg)
 
 
 
