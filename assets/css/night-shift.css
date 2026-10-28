@@ -1,0 +1,142 @@
+/* Night Shift: dark palette, serif headlines, featured latest post.
+   Colors for the page, navbar and footer live in _config.yml;
+   this file handles fonts, the homepage layout, and the parts of the
+   theme that assume a light background. */
+
+:root {
+  --body-font: 'Nunito Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --header-font: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --mid-col: #7D8695;
+  --surface-col: #1C222C;
+  --rule-col: #262C36;
+  --heading-col: #F2F4F7;
+}
+
+/* --- Type --- */
+
+body {
+  font-size: 1.0625rem;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  color: var(--heading-col);
+}
+.navbar-custom .nav-link,
+.navbar-custom .dropdown-item {
+  font-family: var(--body-font);
+  font-weight: 400;
+}
+.navbar-custom .navbar-brand {
+  font-family: var(--header-font);
+  font-weight: 400;
+  font-size: 1.375rem;
+}
+.post-preview .post-meta,
+.post-heading .post-meta {
+  font-style: normal;
+  font-size: 0.9375rem;
+}
+
+/* --- Homepage: featured latest post --- */
+
+.post-preview {
+  border-bottom-color: var(--rule-col);
+}
+.post-preview.post-featured {
+  background: var(--surface-col);
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.post-kicker {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--link-col);
+}
+.post-featured .post-title {
+  font-size: 2.25rem;
+  color: var(--heading-col);
+}
+.post-featured .post-read-more {
+  color: var(--link-col);
+  font-weight: 700;
+}
+
+/* --- Homepage: compact list of older posts --- */
+
+.post-preview.post-compact {
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule-col);
+  border-bottom: 0;
+}
+.post-compact article {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+.post-compact .post-title {
+  margin: 0;
+  font-family: var(--body-font);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--heading-col);
+}
+.post-compact .post-meta {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.post-compact .post-subtitle,
+.post-compact .post-author,
+.post-compact .post-image,
+.post-compact .post-entry,
+.post-compact .blog-tags {
+  display: none;
+}
+
+/* --- Light-background fixes --- */
+
+code {
+  color: #F2C873;
+  background-color: var(--surface-col);
+}
+pre {
+  color: var(--text-col);
+  background-color: var(--surface-col);
+  border: 1px solid var(--rule-col);
+}
+table tr,
+table tr th,
+table tr td {
+  border-color: var(--rule-col);
+}
+table tr:nth-child(2n) {
+  background-color: var(--surface-col);
+}
+.blog-post blockquote {
+  border-left-color: var(--link-col);
+}
+.jumbotron {
+  background: var(--surface-col);
+}
+.box-note,
+.box-warning,
+.box-error,
+.box-success {
+  border-color: var(--rule-col);
+  color: var(--text-col);
+}
+.box-note    { background-color: #1A2433; }
+.box-warning { background-color: #2E2614; }
+.box-error   { background-color: #2E1A1A; }
+.box-success { background-color: #16291D; }
+#nav-search-input:focus {
+  background: var(--surface-col);
+  box-shadow: 0 0.15rem 1rem rgba(0, 0, 0, 0.4);
+}

@@ -5,12 +5,16 @@ layout: page
 {{ content }}
 
 {% assign posts = paginator.posts | default: site.posts %}
+{% assign on_first_page = true %}
+{% if paginator.page and paginator.page > 1 %}{% assign on_first_page = false %}{% endif %}
 
 <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
 <ul class="posts-list list-unstyled" role="list">
   {% for post in posts %}
-  <li class="post-preview">
+  {% if forloop.first and on_first_page %}{% assign featured = true %}{% else %}{% assign featured = false %}{% endif %}
+  <li class="post-preview {% if featured %}post-featured{% else %}post-compact{% endif %}">
     <article>
+      {% if featured %}<span class="post-kicker">Latest post</span>{% endif %}
 
       {%- capture thumbnail -%}
         {% if post.thumbnail-img %}
@@ -47,7 +51,7 @@ layout: page
       </a>
 
       {% if post.author %}
-        <span>By <strong>{{ post.author | strip_html }}</strong></span>
+        <span class="post-author">By <strong>{{ post.author | strip_html }}</strong></span>
       {% endif %}
       <p class="post-meta">
         {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
