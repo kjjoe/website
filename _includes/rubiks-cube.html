@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="{{ '/assets/rubiks/rubiks.css' | relative_url }}">
+
+<div class="rubiks" tabindex="0" aria-label="Interactive Rubik's cube">
+  <div class="rubiks-stage">
+    <canvas></canvas>
+    <span class="rubiks-hint">Drag to look around</span>
+  </div>
+
+  <div class="rubiks-panel">
+    <div class="rubiks-row rubiks-faces" aria-label="Turn a face">
+      <button data-move="U">U</button><button data-move="U'">U'</button>
+      <button data-move="D">D</button><button data-move="D'">D'</button>
+      <button data-move="L">L</button><button data-move="L'">L'</button>
+      <button data-move="R">R</button><button data-move="R'">R'</button>
+      <button data-move="F">F</button><button data-move="F'">F'</button>
+      <button data-move="B">B</button><button data-move="B'">B'</button>
+    </div>
+
+    <div class="rubiks-row">
+      <label>Scramble
+        <select class="rubiks-length">
+          <option>5</option><option selected>8</option><option>10</option><option>12</option>
+          <option>15</option><option>20</option><option>30</option>
+        </select> moves
+      </label>
+      <button data-act="scramble">Scramble</button>
+      <button data-act="reset">Reset</button>
+    </div>
+
+    <div class="rubiks-row">
+      <label><input type="radio" name="rubiks-solver" value="deepcube" checked> DeepCube (neural network)</label>
+      <label><input type="radio" name="rubiks-solver" value="beginner"> Beginner method (always solves)</label>
+    </div>
+
+    <div class="rubiks-row">
+      <button class="rubiks-primary" data-act="solve">Solve</button>
+      <label class="rubiks-speed-label">Speed <input class="rubiks-speed" type="range" min="0" max="100" value="70"></label>
+    </div>
+
+    <p class="rubiks-status" aria-live="polite"></p>
+    <div class="rubiks-moves"></div>
+
+    <div class="rubiks-row rubiks-playback" hidden>
+      <button data-act="restart">Restart</button>
+      <button data-act="prev">Back</button>
+      <button data-act="play">Play</button>
+      <button data-act="next">Forward</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="{{ '/assets/rubiks/app.js' | relative_url }}"></script>
